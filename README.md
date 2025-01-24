@@ -1,2 +1,0 @@
-# ecart
-ECart Frontend
