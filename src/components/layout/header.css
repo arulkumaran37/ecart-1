@@ -1,0 +1,20 @@
+.header {
+    background-color: #007bff;
+    padding: 1rem;
+    color: white;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}

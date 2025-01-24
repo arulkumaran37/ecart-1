@@ -1,0 +1,24 @@
+.wishlist {
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.wishlist h1 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.wishlist-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.wishlist-item h3 {
+    margin: 0;
+}
+
+.wishlist-item p {
+    color: #555;
+}
