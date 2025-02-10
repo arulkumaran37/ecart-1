@@ -1,9 +1,2 @@
-.home {
-    text-align: center;
-}
 
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+

@@ -7,11 +7,18 @@ import Cart from './pages/cart/cart';
 import Profile from './pages/profile/profile';
 import './styles/global.css';
 import Home from './pages/home/home';
+import Login from './pages/signup/Login';
+const signUp = false
+const login = true
+
+const IsUserAuthenticated = signUp || login
 
 const App = () => {
   return (
     <StoreProvider>
       <Router>
+    { IsUserAuthenticated ?
+    <>
         <Header />
         <div className="content">
           <Routes>
@@ -21,8 +28,12 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
-      </Router>
-    </StoreProvider>
+        </>
+    : (
+       <Login />
+    )}
+    </Router>   
+  </StoreProvider>
   );
 };
 

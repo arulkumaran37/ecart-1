@@ -10,12 +10,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <h1>Welcome to Our Store</h1>
-            <div className="product-list">
-                {sampleProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
+            <p>uuhhj</p>
         </div>
     );
 };
