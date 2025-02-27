@@ -6,20 +6,31 @@ import Logo from "../../assets/logo.png";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+    setError("");
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    setError("");
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle login logic here (e.g., API call, validation)
-    console.log("Email:", email);
-    console.log("Password:", password);
+    if (!email || !password) {
+      setError("Please fill in all fields.");
+      return;
+    }
+    setIsLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+      console.log("Logged in with:", email, password);
+    }, 1000);
   };
 
   return (
@@ -27,6 +38,7 @@ function LoginPage() {
       <div className="login-form">
         <img src={Logo} alt="logo" className="Logoimg" />
         <h2>Welcome Back!</h2>
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
@@ -36,6 +48,7 @@ function LoginPage() {
               value={email}
               onChange={handleEmailChange}
               required
+              disabled={isLoading}
             />
           </div>
 
@@ -50,17 +63,19 @@ function LoginPage() {
               value={password}
               onChange={handlePasswordChange}
               required
+              disabled={isLoading}
             />
           </div>
 
-          <button type="submit" className="SignPagebtn">
-            Sign In
+          <button type="submit" className="SignPagebtn" disabled={isLoading}>
+            {isLoading ? "Signing In..." : "Sign In"}
           </button>
         </form>
         <p>
           Don't have an account? <a href="#">Register</a>
         </p>
       </div>
+      {/* Cart image for larger screens */}
       <div className="image-cart">
         <img src={Cart} alt="cart" className="Cartimg" />
       </div>

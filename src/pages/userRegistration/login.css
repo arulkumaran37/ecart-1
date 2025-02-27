@@ -1,52 +1,83 @@
-body{
-  background: linear-gradient(90deg, #ffffff 55%, #ee9f6b 50%);
-
+:root {
+  --min-width: 320px; 
+  --max-width: 1440px; 
+  --min-font: 12px; 
+  --max-font: 16px; 
+  --min-padding: 10px;
+  --max-padding: 40px; 
+  --min-margin: 5px; 
+  --max-margin: 15px;
+  --min-gap: 10px; 
+  --max-gap: 20px; 
+  --min-logo-size: 60px;
+  --max-logo-size: 100px; 
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .login-container {
   min-height: 100vh;
-  background-position: fixed;
-  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   overflow: hidden;
 }
 
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/cart.png"); 
+  background-size: cover;
+  background-position: center;
+  z-index: -1; 
+}
 
 .login-form {
-  padding: 60px;
+  padding: clamp(var(--min-padding), 5vw, var(--max-padding));
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 123, 0, 0.1);
   text-align: center;
   border-style: double;
   border-color: hsl(24, 95%, 59%);
-  position: absolute;
-  left: 8%;
-  top: 20%;
+  background: rgba(255, 255, 255, 0.9); 
+  width: 90%;
+  max-width: 400px;
+  z-index: 1; 
 }
 
-
 h2 {
-  margin-right: 100px;
-  text-align: left;
+  font-size: clamp(18px, 5vw, 24px);
+  margin-bottom: clamp(var(--min-margin), 3vw, var(--max-margin));
+  text-align: center;
 }
 
 label {
   display: block;
   font-weight: 600;
-  margin-bottom: 5px;
-  margin-left: 0px;
+  margin-bottom: clamp(var(--min-margin), 2vw, var(--max-margin));
   text-align: left;
+  font-size: clamp(var(--min-font), 2.5vw, var(--max-font));
 }
 
 input {
   width: 100%;
   border: 1px solid #e09b70;
-  margin-bottom: 10px;
+  margin-bottom: clamp(var(--min-margin), 3vw, var(--max-margin));
   box-sizing: border-box;
   display: block;
   border-radius: 4px;
-  box-sizing: border-box;
-  padding: 12px 20px;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
   font-family: inherit;
-  font-size: 17px;
+  font-size: clamp(var(--min-font), 2.5vw, var(--max-font));
   font-weight: 500;
   line-height: inherit;
   transition: 0.3s ease;
@@ -55,75 +86,53 @@ input {
 .SignPagebtn {
   background-color: #FA8232;
   color: white;
-  padding: 10px 20px;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  width: 100%;
+  font-size: clamp(var(--min-font), 2.5vw, var(--max-font));
 }
 
 a {
   color: #007bff;
   text-decoration: none;
-}
-
-.image-cart{
-  width: 600px;
-  height: 800px;
-  margin-bottom: 200px;
-  position: fixed;
-  left: 50%;
-  top: 0%;
+  font-size: clamp(var(--min-font), 2.5vw, var(--max-font));
 }
 
 .Logoimg {
-  height: 12vh;
-  width: 16vh;
+  height: clamp(var(--min-logo-size), 10vw, var(--max-logo-size));
+  width: clamp(var(--min-logo-size), 10vw, var(--max-logo-size));
+  margin-bottom: clamp(var(--min-margin), 3vw, var(--max-margin));
 }
 
-.forgot-btn{
-  background-color: white;
+.forgot-btn {
+  background-color: transparent;
   border: none;
   color: grey;
   display: block;
   text-align: right;
   margin-left: auto;
   cursor: pointer;
+  font-size: clamp(12px, 2.5vw, 14px);
 }
 
-@media (max-width: 854px) {
-  .login-form {
-      flex-direction: column;
-      position: relative;
-      margin-right: 100px;
-      padding: 10px;
-      width: 400px;
-      height: 500px;
-    }
-    .login-container{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      background: white;
+.error-message {
+  color: #ff0000;
+  font-size: clamp(12px, 2.5vw, 14px);
+  margin-bottom: clamp(10px, 2vw, 15px);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .login-container::before {
+    display: none; 
   }
-  input{
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 0px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    
-  }
+
   .image-cart {
-    display: none;
+    display: block;
+    width: clamp(300px, 40vw, 500px);
+    height: auto;
+    margin-left: 50px;
   }
-}
-
-
-
-@media (max-widht: 854px){
-      .login-container{
-        background: linear-gradient(90deg, #ffffff 50%, #ffffff 50%);
-      }
 }
