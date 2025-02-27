@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./login.css";
+import Cart from "../../assets/cart.png";
+import Logo from "../../assets/logo.png";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -23,6 +25,7 @@ function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-form">
+        <img src={Logo} alt="logo" className="Logoimg" />
         <h2>Welcome Back!</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -38,6 +41,9 @@ function LoginPage() {
 
           <div className="form-group">
             <label htmlFor="password">Password:</label>
+            <button htmlFor="forgotpassword" className="forgot-btn">
+              Forgot Password?
+            </button>
             <input
               type="password"
               id="password"
@@ -45,14 +51,18 @@ function LoginPage() {
               onChange={handlePasswordChange}
               required
             />
-      <a href="#"><button htmlFor="forgotpassword" >Forgot Password?</button></a>
           </div>
 
-          <button type="submit" className="SignPagebtn">Sign In</button>
+          <button type="submit" className="SignPagebtn">
+            Sign In
+          </button>
         </form>
         <p>
-          Don't have an account? <a href="#">Sign Up</a>
+          Don't have an account? <a href="#">Register</a>
         </p>
+      </div>
+      <div className="image-cart">
+        <img src={Cart} alt="cart" className="Cartimg" />
       </div>
     </div>
   );

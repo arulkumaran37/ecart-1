@@ -1,0 +1,129 @@
+body{
+  background: linear-gradient(90deg, #ffffff 55%, #ee9f6b 50%);
+
+}
+.login-container {
+  min-height: 100vh;
+  background-position: fixed;
+  overflow: scroll;
+  overflow: hidden;
+}
+
+
+.login-form {
+  padding: 60px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 123, 0, 0.1);
+  text-align: center;
+  border-style: double;
+  border-color: hsl(24, 95%, 59%);
+  position: absolute;
+  left: 8%;
+  top: 20%;
+}
+
+
+h2 {
+  margin-right: 100px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #e09b70;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: inherit;
+  transition: 0.3s ease;
+}
+
+.SignPagebtn {
+  background-color: #FA8232;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.image-cart{
+  width: 600px;
+  height: 800px;
+  margin-bottom: 200px;
+  position: fixed;
+  left: 50%;
+  top: 0%;
+}
+
+.Logoimg {
+  height: 12vh;
+  width: 16vh;
+}
+
+.forgot-btn{
+  background-color: white;
+  border: none;
+  color: grey;
+  display: block;
+  text-align: right;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 854px) {
+  .login-form {
+      flex-direction: column;
+      position: relative;
+      margin-right: 100px;
+      padding: 10px;
+      width: 400px;
+      height: 500px;
+    }
+    .login-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      background: white;
+  }
+  input{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    
+  }
+  .image-cart {
+    display: none;
+  }
+}
+
+
+
+@media (max-widht: 854px){
+      .login-container{
+        background: linear-gradient(90deg, #ffffff 50%, #ffffff 50%);
+      }
+}

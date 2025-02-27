@@ -49,10 +49,10 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .header {
         flex-direction: column;
-        padding: 10px;
+        padding: 8px;
     }
 
     .search-bar {
